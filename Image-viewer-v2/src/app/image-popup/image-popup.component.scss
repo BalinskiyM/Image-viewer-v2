@@ -1,0 +1,44 @@
+.popup-container {
+  padding: 10px;
+
+  .mat-icon {
+    &:hover {
+      opacity: 0.7;
+      cursor: pointer;
+    }
+  }
+
+  .popup-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .mat-mdc-dialog-title {
+      margin: 0;
+    }
+  }
+
+  .mat-mdc-dialog-content {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    max-height: 60vh;
+
+    img {
+      object-fit: contain;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+    }
+  }
+
+  .mat-mdc-dialog-actions {
+    justify-content: end;
+    gap: 3px;
+
+    .mat-icon {
+      cursor: pointer;
+    }
+  }
+}

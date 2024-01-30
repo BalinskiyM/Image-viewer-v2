@@ -1,0 +1,29 @@
+<div class="popup-container">
+  <div class="popup-title">
+    <div mat-dialog-title>{{ data.name }}</div>
+    <mat-icon mat-dialog-close>cancel</mat-icon>
+  </div>
+  <div mat-dialog-content>
+    <img #imgElementTmpl [src]="data.path" [alt]="data.name"
+         [ngStyle]="{ transform, width: zoomedToFit && '100%', height: zoomedToFit && '100%' }">
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button (click)="zoomToFit()">Zoom to Fit</button>
+    <mat-icon
+      (click)="zoomIn()"
+      [ngStyle]="{
+        opacity: zoomLevel === maxZoomLevel ? '0.5' : '1',
+        cursor: zoomLevel === maxZoomLevel ? 'initial' : 'pointer'
+      }">
+      zoom_in
+    </mat-icon>
+    <mat-icon
+      (click)="zoomOut()"
+      [ngStyle]="{
+        opacity: (zoomedToFit && zoomLevel === 1 || zoomLevel === minZoomLevel) ? '0.5' : '1',
+        cursor: (zoomedToFit && zoomLevel === 1 || zoomLevel === minZoomLevel) ? 'initial' : 'pointer'
+      }">
+      zoom_out
+    </mat-icon>
+  </div>
+</div>

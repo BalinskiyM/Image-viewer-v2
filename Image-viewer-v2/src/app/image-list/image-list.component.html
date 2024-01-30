@@ -1,0 +1,12 @@
+<div class="container">
+  <h2>Images list</h2>
+  <mat-list>
+    <mat-list-item *ngFor="let image of images$ | async">
+      <div class="image-info">
+        <div>Image: {{image.name}}</div>
+        <div>Position: {{image.position}}</div>
+      </div>
+        <mat-icon (click)="viewImage(image)">remove_red_eye</mat-icon>
+    </mat-list-item>
+  </mat-list>
+</div>
